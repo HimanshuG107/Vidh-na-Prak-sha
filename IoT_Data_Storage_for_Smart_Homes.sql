@@ -264,26 +264,6 @@ JOIN SensorData sd ON s.sensor_id = sd.sensor_id
 GROUP BY s.sensor_type;
 
 
-SELECT h.house_no, a.alert_type, COUNT(a.alert_ID) AS total_alerts
-FROM House h
-JOIN Device d ON h.house_id = d.house_id
-JOIN Gives g ON d.device_id = g.device_id
-JOIN Alert a ON g.alert_ID = a.alert_ID
-GROUP BY h.house_no, a.alert_type;
-
-SELECT d.device_name, d.device_type 
-FROM Device d
-LEFT JOIN Sensor s ON d.device_id = s.device_id
-LEFT JOIN SensorData sd ON s.sensor_id = sd.sensor_id
-WHERE sd.sensor_data_id IS NULL;
-
-
-SELECT l.city, MAX(sd.data_value) AS max_temperature
-FROM Location l
-JOIN House h ON l.location_id = h.location_id
-JOIN Device d ON h.house_id = d.house_id
-JOIN Sensor s ON d.device_id = s.device_id
-JOIN SensorData sd ON s.sensor_id = sd.sensor_id
-WHERE s.sensor_type = 'Temperature Sensor'
-GROUP BY l.city;
+-- We have got only some screenshots of the queries and We will insert more data values and more queries later on .   
+-- Thank You Mam
 
