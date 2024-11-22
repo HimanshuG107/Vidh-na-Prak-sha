@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>IoT Dashboard</h1>
+        <nav>
+            <button id="logout">Logout</button>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="sensor-section">
+            <h2>Real-Time Sensor Data</h2>
+            <button id="refresh-sensors">Refresh Sensors</button>
+            <ul id="sensor-data-list"></ul>
+        </section>
+
+        <section id="device-section" style="display: none;">
+            <h2>Device Management</h2>
+            <button id="load-devices">Load Devices</button>
+            <ul id="device-list"></ul>
+            <button id="add-device">Add Device</button>
+        </section>
+
+        <section id="user-section" style="display: none;">
+            <h2>User Management</h2>
+            <button id="register-user">Register User</button>
+            <button id="login-user">Login User</button>
+            <div id="user-actions" style="display: none;">
+                <div id="register-form" style="display: none;">
+                    <h3>Register User</h3>
+                    <input type="text" placeholder="Username" id="register-username">
+                    <input type="password" placeholder="Password" id="register-password">
+                    <button id="submit-register">Submit Registration</button>
+                </div>
+                <div id="login-form" style="display: none;">
+                    <h3>Login User</h3>
+                    <input type="text" placeholder="Username" id="login-username">
+                    <input type="password" placeholder="Password" id="login-password">
+                    <button id="submit-login">Submit Login</button>
+                </div>
+            </div>
+            <ul id="user-list"></ul>
+        </section>
+
+        <section id="house-section" style="display: none;">
+            <h2>House Management</h2>
+            <button id="load-houses">Load Houses</button>
+            <ul id="house-list"></ul>
+            <button id="add-house">Add House</button>
+        </section>
+
+        <section id="location-section" style="display: none;">
+            <h2>Location Management</h2>
+            <button id="load-locations">Load Locations</button>
+            <ul id="location-list"></ul>
+            <button id="add-location">Add Location</button>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <nav id="main-nav">
+            <button id="show-sensors">Show Sensors</button>
+            <button id="show-devices">Show Devices</button>
+            <button id="show-users">Show Users</button>
+            <button id="show-houses">Show Houses</button>
+            <button id="show-locations">Show Locations</button>
+        </nav>
+
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
