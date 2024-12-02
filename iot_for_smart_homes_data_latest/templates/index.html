@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>IoT Dashboard</h1>
+        <nav>
+            <button id="logout">Logout</button>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="sensor-section" style="display: none;">
+            <h2>Real-Time Sensor Data</h2>
+            <!-- <button id="refresh-sensors">Refresh Sensors</button> -->
+            <ul id="sensor-data-list" style="padding:10px; padding:10px;"></ul>
+            <div id="toggle-sensor-form" style="display: none;">
+                <h3>Toggle Sensor in the Above List</h3>
+                <input type="text" placeholder="SensorID" id="sensor_id">
+                <button id="toggle-sensor">Toggle Sensor</button>
+            </div>
+        </section>
+
+        <section id="sensor-data-section" style="display: none;">
+            <h2>Sensor Data By ID</h2>
+            <div id="sensor-data-form" style="display: none;">
+                <h3>Input Sensor ID to show Data</h3>
+                <input type="text" placeholder="SensorID" id="sensor_data_id">
+                <button id="submit-show-sensor-data">Show Sensor Data</button>
+            </div>
+            <br/>
+            <ul id="sensor-data-by-id-list" style="padding:10px; padding:10px;"></ul>
+            
+        </section>
+
+        <section id="device-section" style="display: none;">
+            <h2>Device Management</h2>
+            <button id="load-devices">Load Devices</button>
+            <ul id="device-list"></ul>
+            <div id="toggle-device-form" style="display: none;">
+                <h3>Toggle Device in the Above List</h3>
+                <input type="text" placeholder="DeviceID" id="device_id">
+                <button id="toggle-device">Toggle Device</button>
+            </div>
+            <button id="add-device">Add Device</button>
+            <div id="add-device-form" style="display: none;">
+                <h3>Add Device</h3>
+                <input type="text" placeholder="House ID" id="house_id">
+                <input type="text" placeholder="Device Name" id="device_name">
+                <input type="text" placeholder="Device Type" id="device_type" name="device_type">
+                <input type="text" placeholder="Device Status" id="device_status">
+                <button id="submit-device">Submit Device</button>
+            </div>
+        </section>
+
+        <section id="user-section" style="display: none;">
+            <h2>User Management</h2>
+            <button id="register-user">Show Registered Users</button>
+            <button id="login-user">Login User</button>
+            <div id="user-actions" style="display: none;">
+                <div id="register-form" style="display: none;">
+                    <h3>Register New User</h3>
+                    <input type="text" placeholder="Name" id="register-name">
+                    <input type="text" placeholder="email" id="register-email">
+                    <input type="password" placeholder="Password" id="register-password">
+                    <button id="submit-register">Submit Registration</button>
+                </div>
+                <div id="login-form" style="display: none;">
+                    <h3>Login User</h3>
+                    <input type="text" placeholder="email" id="login-email">
+                    <input type="password" placeholder="Password" id="login-password">
+                    <button id="submit-login">Submit Login</button>
+                </div>
+            </div>
+            <ul id="user-list"></ul>
+        </section>
+
+        <section id="house-section" style="display: none;">
+            <h2>House Management</h2>
+            <button id="load-houses">Load All Houses</button>
+            <ul id="house-list"></ul>
+            <button id="add-house">Add New House</button>
+            <!-- <div id="house-actions" style="display: none;"> -->
+                <div id="add-house-form" style="display: none;">
+                    <h3>Add House</h3>
+                    <input type="text" placeholder="User" id="user_id">
+                    <input type="text" placeholder="Location" id="location_id">
+                    <input type="text" placeholder="Room no" id="room_id">
+                    <input type="text" placeholder="House Number" id="house_no">
+                    <button id="submit-house">Add House</button>
+                </div>
+                <!-- <div id="house-form" style="display: none;">
+                    <h3>All Houses</h3>
+                    <div id="all-house" style="display: none;"></div>
+                    <button id="submit-login">Submit Login</button>
+                </div> -->
+            <!-- </div> -->
+        </section>
+
+        <section id="location-section" style="display: none;">
+            <h2>Location Management</h2>
+            <button id="load-locations">Load All Locations</button>
+            <ul id="location-list"></ul>
+            <button id="add-location">Add New Location</button>
+            <div id="add-location-form" style="display: none;">
+                <h3>Add Location</h3>
+                <input type="text" placeholder="State" id="state">
+                <input type="text" placeholder="City" id="city">
+                <input type="text" placeholder="Zipcode" id="zipcode">
+                <button id="submit-location">Add Location</button>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <nav id="main-nav">
+            <button id="show-sensors">Show All Sensors</button>
+            <button id="show-sensor-data">Show Sensor Data</button>
+            <button id="show-devices">Device Management</button>
+            <button id="show-users">User Management</button>
+            <button id="show-houses">House Management</button>
+            <button id="show-locations">Location Management</button>
+        </nav>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
